@@ -3,120 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Туникафон & Бесшовный Водосток Бишкек</title>
+    <title>Бесшовные Водостоки 0.45мм | Бишкек</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
-        :root { --red: #e31e24; --dark: #111827; --gray: #374151; }
-        body { font-family: 'Inter', sans-serif; margin: 0; background: #000; color: #fff; line-height: 1.6; }
+        :root { --main: #d32f2f; --dark: #0f172a; --light: #f1f5f9; }
         
-        /* Шапка */
+        * { box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; margin: 0; background: #fff; color: var(--dark); line-height: 1.6; }
+        
+        /* Главный экран */
         header { 
             height: 100vh; 
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1628744276520-6733629171b5?q=80&w=1200');
-            background-size: cover; background-position: center;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;
+            background-size: cover; background-position: center; background-attachment: fixed;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 20px;
         }
-        header h1 { font-size: 45px; font-weight: 900; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
-        header h1 span { color: var(--red); }
-        header p { font-size: 20px; max-width: 600px; margin: 20px 0; color: #ccc; }
-        .btn-call { background: var(--red); color: white; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 18px; transition: 0.3s; border: 2px solid var(--red); }
-        .btn-call:hover { background: transparent; }
 
-        /* Секции */
-        section { padding: 80px 20px; max-width: 1000px; margin: auto; }
-        h2 { font-size: 32px; text-align: center; margin-bottom: 50px; text-transform: uppercase; border-bottom: 3px solid var(--red); display: table; margin-inline: auto; padding-bottom: 10px; }
+        header h1 { font-size: clamp(32px, 7vw, 64px); font-weight: 900; margin: 0; text-transform: uppercase; }
+        header h1 span { color: var(--main); }
+        header p { font-size: clamp(16px, 3vw, 22px); max-width: 800px; margin: 25px auto; opacity: 0.9; }
 
-        /* Карточки каталога */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .card { background: #1f2937; padding: 30px; border-radius: 20px; border: 1px solid #374151; transition: 0.3s; }
-        .card:hover { transform: translateY(-10px); border-color: var(--red); }
-        .card i { font-size: 40px; color: var(--red); margin-bottom: 20px; }
-        .card h3 { font-size: 22px; margin-bottom: 15px; color: var(--red); }
-        .card ul { list-style: none; padding: 0; color: #9ca3af; }
-        .card ul li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
-        .card ul li::before { content: '✓'; color: var(--red); font-weight: bold; }
+        .btn-main { 
+            background: var(--main); color: white; padding: 20px 50px; border-radius: 50px; 
+            text-decoration: none; font-weight: bold; font-size: 18px; transition: 0.4s;
+            box-shadow: 0 10px 30px rgba(211,47,47,0.4); border: 2px solid var(--main);
+        }
+        .btn-main:hover { background: transparent; transform: translateY(-5px); }
 
-        /* Особенности */
-        .feature-box { background: var(--red); color: white; padding: 40px; border-radius: 30px; display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-around; text-align: center; }
-        .f-item b { font-size: 24px; display: block; }
+        /* Секция: Подробности */
+        .section { padding: 100px 20px; max-width: 1200px; margin: auto; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 38px; text-transform: uppercase; margin-bottom: 10px; }
+        .section-title p { color: var(--main); font-weight: bold; letter-spacing: 2px; }
 
-        /* Футер */
-        footer { background: #111; padding: 60px 20px; text-align: center; border-top: 1px solid #333; }
-        .footer-info { margin-bottom: 30px; font-size: 18px; color: #9ca3af; }
-        .social-btn { color: white; font-size: 30px; margin: 0 15px; transition: 0.3s; }
-        .social-btn:hover { color: var(--red); }
+        .grid-detail { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .info-card { padding: 40px; border-radius: 30px; background: var(--light); transition: 0.4s; position: relative; overflow: hidden; }
+        .info-card:hover { transform: translateY(-10px); background: #fff; box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
+        .info-card i { font-size: 50px; color: var(--main); margin-bottom: 25px; }
+        .info-card h3 { font-size: 24px; margin-bottom: 15px; }
+        
+        /* Спецификации ЛМЗ */
+        .premium-box { background: var(--dark); color: white; border-radius: 40px; padding: 50px; margin-top: 50px; display: flex; flex-wrap: wrap; align-items: center; gap: 40px; }
+        .premium-text { flex: 2; min-width: 300px; }
+        .premium-text h2 { color: var(--main); font-size: 32px; }
+        .premium-list { list-style: none; padding: 0; }
+        .premium-list li { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 15px; }
+        .premium-list li i { color: #2ecc71; }
+
+        /* Технология */
+        .how-it-works { padding: 80px 20px; background: #fafafa; text-align: center; }
+        .step-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px; }
+        .step { width: 250px; }
+        .step b { font-size: 40px; color: #eee; display: block; margin-bottom: -20px; }
+        .step h4 { font-size: 20px; color: var(--dark); position: relative; z-index: 1; }
+
+        /* Контакты */
+        footer { background: #000; color: white; padding: 80px 20px; text-align: center; }
+        .wa-footer { background: #25d366; color: white; padding: 20px 40px; border-radius: 50px; text-decoration: none; font-weight: 800; display: inline-flex; align-items: center; gap: 15px; font-size: 20px; transition: 0.3s; }
+        .wa-footer:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(37,211,102,0.4); }
+
+        /* Анимация проявления */
+        .reveal { opacity: 0; transform: translateY(40px); transition: 1s all ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body>
 
     <header>
-        <h1><span>ТУНИКАФОН</span> БИШКЕК</h1>
-        <p>Производство бесшовных водостоков прямо на вашем объекте. Никаких стыков — никакой течи.</p>
-        <a href="https://wa.me/996709949854" class="btn-call"><i class="fab fa-whatsapp"></i> ЗАКАЗАТЬ МОНТАЖ</a>
+        <div class="animate__animated animate__fadeIn">
+            <p style="color:var(--main); font-weight:bold; text-transform:uppercase; letter-spacing:4px;">Premium Quality</p>
+            <h1>БЕСШОВНЫЕ <span>ВОДОСТОКИ</span></h1>
+            <p>Эксклюзивное производство из стали <b>0.45 мм (Россия ЛМЗ)</b>. Ни одного стыка — гарантированная защита вашего дома от влаги.</p>
+            <a href="https://wa.me/996709949854" class="btn-main">ВЫЗВАТЬ МАСТЕРА НА ЗАМЕР</a>
+        </div>
     </header>
 
-    <section>
-        <div class="feature-box">
-            <div class="f-item"><b>0 СТЫКОВ</b><span>Любая длина</span></div>
-            <div class="f-item"><b>40 МИНУТ</b><span>Скорость монтажа</span></div>
-            <div class="f-item"><b>СТАЛЬ 0.4</b><span>Прочность и долговечность</span></div>
+    <section class="section">
+        <div class="section-title reveal">
+            <p>О ТЕХНОЛОГИИ</p>
+            <h2>Почему бесшовный — это лучший выбор?</h2>
         </div>
-    </section>
 
-    <section id="catalog">
-        <h2>Каталог материалов</h2>
-        <div class="grid">
-            <div class="card">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Россия ЛМЗ (Премиум)</h3>
-                <p>Самый надежный металл на рынке. Толщина 0.40 мм.</p>
-                <ul>
-                    <li>Антрацит (7024) - Матовый стиль</li>
-                    <li>Белый (9003) - Классика</li>
-                    <li>Стойкость к выцветанию 25 лет</li>
+        <div class="grid-detail">
+            <div class="info-card reveal">
+                <i class="fas fa-tint-slash"></i>
+                <h3>100% Герметичность</h3>
+                <p>Стандартные желоба текут в местах соединений. Наш желоб прокатывается цельным куском во всю длину карниза (хоть 40 метров). Нет швов — нечему ломаться и протекать.</p>
+            </div>
+            <div class="info-card reveal">
+                <i class="fas fa-shield-virus"></i>
+                <h3>Сталь 0.45 мм (ЛМЗ)</h3>
+                <p>Мы используем усиленный металл производства России. Он на 15% толще стандартных аналогов, что позволяет желобу выдерживать экстремальные снеговые нагрузки в Бишкеке.</p>
+            </div>
+            <div class="info-card reveal">
+                <i class="fas fa-eye"></i>
+                <h3>Эстетика фасада</h3>
+                <p>Система монтируется на скрытые внутренние кронштейны. Вы не видите лишнего крепежа и соединителей. Крыша выглядит аккуратно, современно и дорого.</p>
+            </div>
+        </div>
+
+        <div class="premium-box reveal">
+            <div class="premium-text">
+                <h2>Характеристики России ЛМЗ</h2>
+                <p>Мы работаем с металлом, который прошел проверку временем в нашем климате.</p>
+                <ul class="premium-list">
+                    <li><i class="fas fa-check"></i> Толщина стали строго 0.45 мм</li>
+                    <li><i class="fas fa-check"></i> Двойное антикоррозийное покрытие</li>
+                    <li><i class="fas fa-check"></i> Стойкость к выцветанию (RAL 7024 / 9003)</li>
+                    <li><i class="fas fa-check"></i> Гладкое скольжение воды и мусора</li>
                 </ul>
             </div>
-            <div class="card">
-                <i class="fas fa-check-double"></i>
-                <h3>Китай (Стандарт)</h3>
-                <p>Оптимальное соотношение цены и качества.</p>
-                <ul>
-                    <li>Толщина 0.35 - 0.40 мм</li>
-                    <li>Доступные цвета: 7024 и 9003</li>
-                    <li>Выгодная цена за метр</li>
-                </ul>
-            </div>
-            <div class="card">
-                <i class="fas fa-tools"></i>
-                <h3>Комплектующие</h3>
-                <p>Всё для полной сборки системы под ключ.</p>
-                <ul>
-                    <li>Трубы (квадратные и круглые)</li>
-                    <li>Кронштейны (наружные и внутренние)</li>
-                    <li>Воронки, колена и заглушки</li>
-                    <li>Герметик TOSKA 606</li>
-                </ul>
+            <div style="flex:1; text-align:center;">
+                <div style="font-size: 80px; color: var(--main); font-weight: 900;">0.45</div>
+                <div style="text-transform:uppercase; letter-spacing:3px;">миллиметра</div>
             </div>
         </div>
     </section>
 
-    <section>
-        <h2>Почему выбирают нас?</h2>
-        <div style="font-size: 18px; color: #9ca3af;">
-            <p>Мы используем американскую технологию проката. Желоб изготавливается из цельного рулона металла прямо у вашего дома. Это значит, что на карнизе не будет ни одного соединения, где со временем могла бы начаться течь.</p>
-            <p><b>Наш адрес:</b> г. Бишкек, ул. Льва Толстого, 118</p>
+    <div class="how-it-works">
+        <div class="section-title reveal">
+            <h2>Процесс работы</h2>
         </div>
-    </section>
+        <div class="step-container reveal">
+            <div class="step"><b>01</b><h4>Замер</h4><p>Бесплатно выезжаем и делаем точный расчет.</p></div>
+            <div class="step"><b>02</b><h4>Прокат</h4><p>Прокатываем желоба прямо у вас на объекте.</p></div>
+            <div class="step"><b>03</b><h4>Монтаж</h4><p>Устанавливаем готовую систему за 1 день.</p></div>
+        </div>
+    </div>
 
     <footer>
-        <div class="footer-info">
-            <p><i class="fas fa-map-marker-alt" style="color:var(--red)"></i> г. Бишкек, ул. Льва Толстого, 118</p>
-            <p><i class="fas fa-phone-alt" style="color:var(--red)"></i> +996 (709) 949 854</p>
+        <div class="reveal">
+            <h2>Защитите свой фундамент прямо сейчас</h2>
+            <p>Напишите нам, и мы рассчитаем стоимость вашего водостока за 5 минут</p>
+            <br>
+            <a href="https://wa.me/996709949854" class="wa-footer">
+                <i class="fab fa-whatsapp"></i> НАПИСАТЬ В WHATSAPP
+            </a>
+            <div style="margin-top:50px; opacity: 0.6; font-size: 14px;">
+                <p><i class="fas fa-map-marker-alt"></i> г. Бишкек, ул. Льва Толстого, 118</p>
+                <p><i class="fas fa-phone"></i> +996 (709) 949 854</p>
+                <p>© 2026 Бесшовные Водосточные Системы — Качество без компромиссов</p>
+            </div>
         </div>
-        <a href="https://wa.me/996709949854" class="social-btn"><i class="fab fa-whatsapp"></i></a>
-        <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
-        <p style="margin-top:40px; font-size: 12px; opacity: 0.4;">© 2026 ТУНИКАФОН ВОДОСТОК — Профессиональные решения</p>
     </footer>
 
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
 </body>
 </html>
