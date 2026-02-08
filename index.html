@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Туникафон & Бесшовный Водосток Бишкек</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --red: #e31e24; --dark: #111827; --gray: #374151; }
+        body { font-family: 'Inter', sans-serif; margin: 0; background: #000; color: #fff; line-height: 1.6; }
+        
+        /* Шапка */
+        header { 
+            height: 100vh; 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1628744276520-6733629171b5?q=80&w=1200');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;
+        }
+        header h1 { font-size: 45px; font-weight: 900; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
+        header h1 span { color: var(--red); }
+        header p { font-size: 20px; max-width: 600px; margin: 20px 0; color: #ccc; }
+        .btn-call { background: var(--red); color: white; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 18px; transition: 0.3s; border: 2px solid var(--red); }
+        .btn-call:hover { background: transparent; }
+
+        /* Секции */
+        section { padding: 80px 20px; max-width: 1000px; margin: auto; }
+        h2 { font-size: 32px; text-align: center; margin-bottom: 50px; text-transform: uppercase; border-bottom: 3px solid var(--red); display: table; margin-inline: auto; padding-bottom: 10px; }
+
+        /* Карточки каталога */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { background: #1f2937; padding: 30px; border-radius: 20px; border: 1px solid #374151; transition: 0.3s; }
+        .card:hover { transform: translateY(-10px); border-color: var(--red); }
+        .card i { font-size: 40px; color: var(--red); margin-bottom: 20px; }
+        .card h3 { font-size: 22px; margin-bottom: 15px; color: var(--red); }
+        .card ul { list-style: none; padding: 0; color: #9ca3af; }
+        .card ul li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .card ul li::before { content: '✓'; color: var(--red); font-weight: bold; }
+
+        /* Особенности */
+        .feature-box { background: var(--red); color: white; padding: 40px; border-radius: 30px; display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-around; text-align: center; }
+        .f-item b { font-size: 24px; display: block; }
+
+        /* Футер */
+        footer { background: #111; padding: 60px 20px; text-align: center; border-top: 1px solid #333; }
+        .footer-info { margin-bottom: 30px; font-size: 18px; color: #9ca3af; }
+        .social-btn { color: white; font-size: 30px; margin: 0 15px; transition: 0.3s; }
+        .social-btn:hover { color: var(--red); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><span>ТУНИКАФОН</span> БИШКЕК</h1>
+        <p>Производство бесшовных водостоков прямо на вашем объекте. Никаких стыков — никакой течи.</p>
+        <a href="https://wa.me/996709949854" class="btn-call"><i class="fab fa-whatsapp"></i> ЗАКАЗАТЬ МОНТАЖ</a>
+    </header>
+
+    <section>
+        <div class="feature-box">
+            <div class="f-item"><b>0 СТЫКОВ</b><span>Любая длина</span></div>
+            <div class="f-item"><b>40 МИНУТ</b><span>Скорость монтажа</span></div>
+            <div class="f-item"><b>СТАЛЬ 0.4</b><span>Прочность и долговечность</span></div>
+        </div>
+    </section>
+
+    <section id="catalog">
+        <h2>Каталог материалов</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Россия ЛМЗ (Премиум)</h3>
+                <p>Самый надежный металл на рынке. Толщина 0.40 мм.</p>
+                <ul>
+                    <li>Антрацит (7024) - Матовый стиль</li>
+                    <li>Белый (9003) - Классика</li>
+                    <li>Стойкость к выцветанию 25 лет</li>
+                </ul>
+            </div>
+            <div class="card">
+                <i class="fas fa-check-double"></i>
+                <h3>Китай (Стандарт)</h3>
+                <p>Оптимальное соотношение цены и качества.</p>
+                <ul>
+                    <li>Толщина 0.35 - 0.40 мм</li>
+                    <li>Доступные цвета: 7024 и 9003</li>
+                    <li>Выгодная цена за метр</li>
+                </ul>
+            </div>
+            <div class="card">
+                <i class="fas fa-tools"></i>
+                <h3>Комплектующие</h3>
+                <p>Всё для полной сборки системы под ключ.</p>
+                <ul>
+                    <li>Трубы (квадратные и круглые)</li>
+                    <li>Кронштейны (наружные и внутренние)</li>
+                    <li>Воронки, колена и заглушки</li>
+                    <li>Герметик TOSKA 606</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Почему выбирают нас?</h2>
+        <div style="font-size: 18px; color: #9ca3af;">
+            <p>Мы используем американскую технологию проката. Желоб изготавливается из цельного рулона металла прямо у вашего дома. Это значит, что на карнизе не будет ни одного соединения, где со временем могла бы начаться течь.</p>
+            <p><b>Наш адрес:</b> г. Бишкек, ул. Льва Толстого, 118</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-info">
+            <p><i class="fas fa-map-marker-alt" style="color:var(--red)"></i> г. Бишкек, ул. Льва Толстого, 118</p>
+            <p><i class="fas fa-phone-alt" style="color:var(--red)"></i> +996 (709) 949 854</p>
+        </div>
+        <a href="https://wa.me/996709949854" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+        <p style="margin-top:40px; font-size: 12px; opacity: 0.4;">© 2026 ТУНИКАФОН ВОДОСТОК — Профессиональные решения</p>
+    </footer>
+
+</body>
+</html>
